@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>撞球之星 - BILLIARD BATTLE</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800;900&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#570008",
+                        "on-tertiary-fixed-variant": "#432582",
+                        "error-container": "#fb5151",
+                        "outline": "#6a7982",
+                        "tertiary-fixed-dim": "#b093f6",
+                        "error-dim": "#9f0519",
+                        "on-background": "#233039",
+                        "on-surface": "#233039",
+                        "background": "#eff8ff",
+                        "primary-dim": "#5c4f00",
+                        "primary-container": "#fcdc00",
+                        "primary-fixed": "#fcdc00",
+                        "secondary-dim": "#005863",
+                        "primary": "#695b00",
+                        "surface-container-highest": "#cae0ef",
+                        "tertiary-container": "#bda1ff",
+                        "on-secondary-container": "#004f59",
+                        "tertiary-dim": "#5a3e9a",
+                        "surface-container": "#d8ebf8",
+                        "secondary-fixed-dim": "#00d7f0",
+                        "surface-container-high": "#d1e5f3",
+                        "on-primary": "#fff3c3",
+                        "on-primary-container": "#5a4e00",
+                        "surface-tint": "#695b00",
+                        "on-primary-fixed": "#453c00",
+                        "surface-variant": "#cae0ef",
+                        "surface": "#eff8ff",
+                        "secondary": "#006571",
+                        "on-tertiary-container": "#3a1a79",
+                        "on-tertiary-fixed": "#1f0052",
+                        "on-surface-variant": "#4f5d67",
+                        "inverse-primary": "#fcdc00",
+                        "inverse-surface": "#031017",
+                        "on-secondary-fixed": "#003a42",
+                        "error": "#b31b25",
+                        "secondary-container": "#26e6ff",
+                        "surface-container-low": "#e3f3ff",
+                        "on-secondary": "#d8f8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#909fa9",
+                        "on-tertiary": "#f8f0ff",
+                        "tertiary": "#664aa7",
+                        "on-error": "#ffefee",
+                        "on-primary-fixed-variant": "#655800",
+                        "surface-bright": "#eff8ff",
+                        "outline-variant": "#a0afb9",
+                        "surface-dim": "#c1d8e7",
+                        "primary-fixed-dim": "#ecce00",
+                        "on-secondary-fixed-variant": "#005964",
+                        "secondary-fixed": "#26e6ff",
+                        "tertiary-fixed": "#bda1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 700, 'GRAD' 0, 'opsz' 48;
+        }
+
+        .text-stroke-3 {
+            -webkit-text-stroke: 4px #664aa7;
+        }
+
+        .manga-shadow {
+            text-shadow: 4px 4px 0px #664aa7;
+        }
+
+        .cel-border {
+            border: 4px solid #664aa7;
+        }
+
+        .sticker-drop {
+            box-shadow: 6px 6px 0px 0px #664aa7;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+            background-color: #eff8ff;
+        }
+    </style>
+</head>
+
+<body class="font-body text-on-surface">
+    <!-- TopAppBar from JSON Specification -->
+    <nav
+        class="fixed top-0 left-0 w-full h-16 flex justify-between items-center px-8 z-50 bg-[#eff8ff] dark:bg-slate-900 border-b-4 border-[#664aa7] shadow-[4px_4px_0px_0px_rgba(102,74,167,1)]">
+        <div class="flex items-center gap-4">
+            <span
+                class="text-2xl font-black text-[#664aa7] drop-shadow-[2px_2px_0px_#fcdc00] font-['Plus_Jakarta_Sans'] uppercase tracking-tighter">BILLIARD
+                BATTLE</span>
+        </div>
+        <div class="hidden md:flex gap-8 items-center">
+            <a class="text-[#fcdc00] font-['Plus_Jakarta_Sans'] font-black uppercase tracking-tighter hover:scale-105 transition-transform"
+                href="#">Home</a>
+            <a class="text-[#664aa7] font-['Plus_Jakarta_Sans'] font-black uppercase tracking-tighter hover:scale-105 transition-transform"
+                href="#">Cues</a>
+            <a class="text-[#664aa7] font-['Plus_Jakarta_Sans'] font-black uppercase tracking-tighter hover:scale-105 transition-transform"
+                href="#">Shop</a>
+            <a class="text-[#664aa7] font-['Plus_Jakarta_Sans'] font-black uppercase tracking-tighter hover:scale-105 transition-transform"
+                href="#">Social</a>
+        </div>
+        <div class="flex gap-4">
+            <span
+                class="material-symbols-outlined text-[#664aa7] cursor-pointer hover:scale-105 transition-transform">star</span>
+            <span
+                class="material-symbols-outlined text-[#664aa7] cursor-pointer hover:scale-105 transition-transform">favorite</span>
+            <span
+                class="material-symbols-outlined text-[#664aa7] cursor-pointer hover:scale-105 transition-transform">settings</span>
+        </div>
+    </nav>
+    <!-- SideNavBar from JSON Specification -->
+    <aside
+        class="fixed left-0 top-0 h-full flex flex-col items-center py-6 gap-4 z-40 bg-[#eff8ff] dark:bg-slate-900 w-24 rounded-r-3xl border-r-4 border-[#664aa7] shadow-[4px_0px_0px_0px_rgba(102,74,167,1)] pt-20">
+        <div class="flex flex-col items-center mb-4">
+            <div class="w-12 h-12 rounded-full cel-border bg-primary-container overflow-hidden">
+                <img alt="Player Profile"
+                    data-alt="vibrant anime style avatar of a sporty girl with blue hair in a circle frame"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ5oyZBuOrpc6j7lo46n1X8gE2Kris0Y4v15YdNiCGU4lAtOq7_Rg6RamFZbCutPbNUtMut0yDTtAf2zXHixD35RQ3CGDOQ6a1ONx4P8YNU7xlZOabgbiiNWIcaXqXZRET7KPwUZXu8YDE3L_LSXI_RuhsmxzP7oDgQt7iulxzZkO22f-IkZa_ogjDqudZsP6oZUwHCAkKU8Sn2juewwraIffy1YJxjwoj8T3gtxs00JHkej3M1pcH_Hd4bfNsKayg3vqkWlFH6Xc" />
+            </div>
+            <span class="text-[10px] font-black text-tertiary mt-1">SSS RANK</span>
+        </div>
+        <div class="flex flex-col gap-6 w-full px-2">
+            <!-- Home (Active) -->
+            <div
+                class="flex flex-col items-center gap-1 p-2 bg-[#fcdc00] text-[#664aa7] rounded-full border-4 border-[#664aa7] shadow-[2px_2px_0px_#664aa7] scale-95 transition-all duration-150 cursor-pointer">
+                <span class="material-symbols-outlined">home</span>
+                <span class="text-[10px] font-bold">Home</span>
+            </div>
+            <!-- Cues -->
+            <div
+                class="flex flex-col items-center gap-1 p-2 text-[#664aa7] opacity-80 hover:bg-[#26e6ff] hover:text-white rounded-full transition-all duration-150 cursor-pointer">
+                <span class="material-symbols-outlined">sports_score</span>
+                <span class="text-[10px] font-bold">Cues</span>
+            </div>
+            <!-- Shop -->
+            <div
+                class="flex flex-col items-center gap-1 p-2 text-[#664aa7] opacity-80 hover:bg-[#26e6ff] hover:text-white rounded-full transition-all duration-150 cursor-pointer">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span class="text-[10px] font-bold">Shop</span>
+            </div>
+            <!-- Social -->
+            <div
+                class="flex flex-col items-center gap-1 p-2 text-[#664aa7] opacity-80 hover:bg-[#26e6ff] hover:text-white rounded-full transition-all duration-150 cursor-pointer">
+                <span class="material-symbols-outlined">groups</span>
+                <span class="text-[10px] font-bold">Social</span>
+            </div>
+        </div>
+        <button
+            class="mt-auto bg-primary-container text-tertiary cel-border px-4 py-2 rounded-xl font-black sticker-drop active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all">
+            GO!
+        </button>
+    </aside>
+    <!-- Main Content Canvas (16:9 Landscape Layout) -->
+    <main
+        class="ml-24 pt-16 h-screen w-[calc(100vw-6rem)] relative overflow-hidden bg-surface flex items-center justify-center">
+        <!-- Background Decorative Elements -->
+        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <div class="absolute -right-20 top-20 w-96 h-96 bg-secondary-container rounded-full opacity-20 blur-3xl">
+            </div>
+            <div class="absolute -left-20 bottom-10 w-64 h-64 bg-tertiary-container rounded-full opacity-20 blur-3xl">
+            </div>
+        </div>
+        <div class="grid grid-cols-12 gap-8 w-full h-full p-8 relative z-10 max-w-7xl mx-auto">
+            <!-- Left Section: Character & Title -->
+            <div class="col-span-5 flex flex-col justify-center items-start space-y-6">
+                <div class="relative">
+                    <h1
+                        class="text-7xl md:text-8xl font-black text-primary-container manga-shadow text-stroke-3 tracking-widest font-headline">
+                        撞球之星
+                    </h1>
+                    <div
+                        class="absolute -top-6 -right-12 bg-tertiary text-on-tertiary px-4 py-1 rounded-full cel-border font-black rotate-12 sticker-drop">
+                        NEW SEASON!
+                    </div>
+                </div>
+                <div class="relative w-full aspect-square max-w-[400px]">
+                    <!-- Character Image -->
+                    <div
+                        class="absolute inset-0 bg-secondary-fixed/10 rounded-full border-8 border-tertiary/20 animate-pulse">
+                    </div>
+                    <img alt="撞球之星主角"
+                        class="w-full h-full object-cover rounded-3xl cel-border sticker-drop relative z-10 grayscale hover:grayscale-0 transition-all duration-500"
+                        data-alt="Anime style athletic girl with twin tails, holding a billiard cue, dynamic sports pose, vibrant cel-shaded style with thick purple outlines"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5eaZ73xdymld62MNAAQZXU0i7YlUwf5loIxBaNhQBSTPZMN-oyM5p6l3Bxl8qLkf25xb7McM82qLPm0ZlKKPTx4In8DRD2MU9J4sizLKZYg4O-0eFyPe0tAG-AuGmttawHaLsC-s8Y_M0rhqkXbteK8eJ3FPCpU9lQqq6EAczlvq0CL6TcCj-RAtyVOGRecx9cY9HyQciuVtRYd8ABTOxzLlQFM7AjgM5sn928p_DmqZsM5cqobcF3YVGZqufPVZ9YUzul-0lGOg" />
+                </div>
+            </div>
+            <!-- Right Section: Game Features (Bento Style) -->
+            <div class="col-span-7 flex flex-col justify-center space-y-6">
+                <!-- Section 1: 遊戲特色 -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-8 bg-primary-container cel-border"></div>
+                        <h2 class="text-3xl font-black text-tertiary font-headline">遊戲特色</h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div
+                            class="bg-surface-container-highest cel-border p-6 rounded-xl sticker-drop hover:-translate-y-1 transition-transform group">
+                            <div class="flex items-center gap-4 mb-2">
+                                <div class="p-3 bg-secondary-container rounded-full cel-border">
+                                    <span class="material-symbols-outlined text-tertiary"
+                                        style="font-variation-settings: 'FILL' 1;">bolt</span>
+                                </div>
+                                <h3 class="text-xl font-black text-tertiary">極速連線對決</h3>
+                            </div>
+                            <p class="text-sm font-bold text-on-surface-variant leading-relaxed">
+                                挑戰全球好手，即時匹配不等待，展開激烈的撞球攻防戰！</p>
+                        </div>
+                        <div
+                            class="bg-surface-container-lowest cel-border p-6 rounded-xl sticker-drop hover:-translate-y-1 transition-transform group">
+                            <div class="flex items-center gap-4 mb-2">
+                                <div class="p-3 bg-primary-container rounded-full cel-border">
+                                    <span class="material-symbols-outlined text-tertiary"
+                                        style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+                                </div>
+                                <h3 class="text-xl font-black text-tertiary">傳奇球桿收藏</h3>
+                            </div>
+                            <p class="text-sm font-bold text-on-surface-variant leading-relaxed">
+                                解鎖擁有特殊動力的限定球桿，打造你的專屬個人風格。</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 2: 操作核心 -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-8 bg-secondary-container cel-border"></div>
+                        <h2 class="text-3xl font-black text-tertiary font-headline">操作核心</h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <!-- 動力滑桿 Component -->
+                        <div
+                            class="bg-surface-container-high cel-border p-4 rounded-xl flex items-center gap-4 relative overflow-hidden">
+                            <div
+                                class="flex-shrink-0 w-16 h-16 rounded-full bg-white cel-border flex items-center justify-center">
+                                <span class="material-symbols-outlined text-3xl text-tertiary"
+                                    style="font-variation-settings: 'FILL' 1;">speed</span>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-black text-tertiary">動力滑桿</h4>
+                                <div
+                                    class="mt-2 w-full h-4 bg-tertiary/10 rounded-full border-2 border-tertiary overflow-hidden">
+                                    <div
+                                        class="h-full bg-gradient-to-r from-secondary-container to-primary-container w-[75%]">
+                                    </div>
+                                </div>
+                                <span class="text-[10px] font-black text-tertiary uppercase mt-1 block">POWER GAUGE
+                                    CONTROL</span>
+                            </div>
+                            <div class="absolute -right-2 -bottom-2 opacity-10">
+                                <span class="material-symbols-outlined text-6xl">navigation</span>
+                            </div>
+                        </div>
+                        <!-- 精準瞄準線 Component -->
+                        <div
+                            class="bg-surface-container-high cel-border p-4 rounded-xl flex items-center gap-4 relative overflow-hidden">
+                            <div
+                                class="flex-shrink-0 w-16 h-16 rounded-full bg-white cel-border flex items-center justify-center">
+                                <span class="material-symbols-outlined text-3xl text-tertiary"
+                                    style="font-variation-settings: 'FILL' 1;">ads_click</span>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-black text-tertiary">精準瞄準線</h4>
+                                <div class="mt-2 flex gap-1">
+                                    <div class="h-2 w-4 bg-secondary-container rounded-full"></div>
+                                    <div class="h-2 w-4 bg-secondary-container rounded-full opacity-60"></div>
+                                    <div class="h-2 w-4 bg-secondary-container rounded-full opacity-30"></div>
+                                    <div class="h-2 w-4 bg-secondary-container rounded-full opacity-10"></div>
+                                </div>
+                                <span class="text-[10px] font-black text-tertiary uppercase mt-1 block">PRECISION
+                                    GUIDELINE</span>
+                            </div>
+                            <div class="absolute -right-2 -bottom-2 opacity-10">
+                                <span class="material-symbols-outlined text-6xl">track_changes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer Label -->
+                <div class="pt-4 flex justify-end">
+                    <div class="flex items-center gap-2 text-tertiary font-black opacity-50">
+                        <span class="material-symbols-outlined text-sm">copyright</span>
+                        <span class="text-xs uppercase tracking-widest font-label">2024 Billiard Battle Interactive. All
+                            rights reserved.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Floating Decorations -->
+        <div class="absolute bottom-10 right-10 z-20 flex gap-4">
+            <div
+                class="w-16 h-16 rounded-full bg-primary-container cel-border sticker-drop flex items-center justify-center rotate-6">
+                <span class="material-symbols-outlined text-tertiary"
+                    style="font-variation-settings: 'FILL' 1;">sports_baseball</span>
+            </div>
+            <div
+                class="w-12 h-12 rounded-full bg-secondary-container cel-border sticker-drop flex items-center justify-center -rotate-12 translate-y-4">
+                <span class="material-symbols-outlined text-tertiary"
+                    style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+        </div>
+    </main>
+    <!-- Visual Hint: Scan to play (replacing button) -->
+    <div
+        class="fixed bottom-8 left-32 z-50 flex items-center gap-4 bg-surface-container-lowest cel-border p-3 rounded-2xl sticker-drop">
+        <div class="w-16 h-16 bg-white border-2 border-tertiary p-1">
+            <!-- Simulated QR -->
+            <div class="w-full h-full bg-tertiary opacity-10 rounded-sm"></div>
+        </div>
+        <div>
+            <p class="font-black text-tertiary text-xs">即刻掃描預約</p>
+            <p class="font-bold text-on-surface-variant text-[10px]">第一次中文化限定版本</p>
+        </div>
+    </div>
+</body>
+
+</html>

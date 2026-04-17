@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BILLIARD BATTLE - Post-Game Result</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#570008",
+                        "on-tertiary-fixed-variant": "#432582",
+                        "error-container": "#fb5151",
+                        "outline": "#6a7982",
+                        "tertiary-fixed-dim": "#b093f6",
+                        "error-dim": "#9f0519",
+                        "on-background": "#233039",
+                        "on-surface": "#233039",
+                        "background": "#eff8ff",
+                        "primary-dim": "#5c4f00",
+                        "primary-container": "#fcdc00",
+                        "primary-fixed": "#fcdc00",
+                        "secondary-dim": "#005863",
+                        "primary": "#695b00",
+                        "surface-container-highest": "#cae0ef",
+                        "tertiary-container": "#bda1ff",
+                        "on-secondary-container": "#004f59",
+                        "tertiary-dim": "#5a3e9a",
+                        "surface-container": "#d8ebf8",
+                        "secondary-fixed-dim": "#00d7f0",
+                        "surface-container-high": "#d1e5f3",
+                        "on-primary": "#fff3c3",
+                        "on-primary-container": "#5a4e00",
+                        "surface-tint": "#695b00",
+                        "on-primary-fixed": "#453c00",
+                        "surface-variant": "#cae0ef",
+                        "surface": "#eff8ff",
+                        "secondary": "#006571",
+                        "on-tertiary-container": "#3a1a79",
+                        "on-tertiary-fixed": "#1f0052",
+                        "on-surface-variant": "#4f5d67",
+                        "inverse-primary": "#fcdc00",
+                        "inverse-surface": "#031017",
+                        "on-secondary-fixed": "#003a42",
+                        "error": "#b31b25",
+                        "secondary-container": "#26e6ff",
+                        "surface-container-low": "#e3f3ff",
+                        "on-secondary": "#d8f8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#909fa9",
+                        "on-tertiary": "#f8f0ff",
+                        "tertiary": "#664aa7",
+                        "on-error": "#ffefee",
+                        "on-primary-fixed-variant": "#655800",
+                        "surface-bright": "#eff8ff",
+                        "outline-variant": "#a0afb9",
+                        "surface-dim": "#c1d8e7",
+                        "primary-fixed-dim": "#ecce00",
+                        "on-secondary-fixed-variant": "#005964",
+                        "secondary-fixed": "#26e6ff",
+                        "tertiary-fixed": "#bda1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .manga-stroke {
+            -webkit-text-stroke: 4px #664aa7;
+        }
+
+        .manga-shadow {
+            text-shadow: 6px 6px 0px #664aa7;
+        }
+
+        .sticker-effect {
+            box-shadow: 8px 8px 0px 0px #664aa7;
+        }
+
+        .bg-comic-stars {
+            background-image: radial-gradient(#664aa7 2px, transparent 2px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background font-body text-on-surface overflow-hidden h-screen w-screen selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Top Navigation Anchor (As per Shared Components) -->
+    <header
+        class="fixed top-0 left-0 w-full h-16 flex justify-between items-center px-8 z-50 bg-[#eff8ff] dark:bg-slate-900 border-b-4 border-[#664aa7] shadow-[4px_4px_0px_0px_rgba(102,74,167,1)]">
+        <div class="flex items-center gap-4">
+            <span
+                class="font-headline font-black uppercase tracking-tighter text-2xl text-[#664aa7] drop-shadow-[2px_2px_0px_#fcdc00]">BILLIARD
+                BATTLE</span>
+        </div>
+        <div class="flex gap-4">
+            <button class="material-symbols-outlined text-[#664aa7] text-2xl hover:scale-105 transition-transform"
+                data-icon="star">star</button>
+            <button class="material-symbols-outlined text-[#664aa7] text-2xl hover:scale-105 transition-transform"
+                data-icon="favorite">favorite</button>
+            <button class="material-symbols-outlined text-[#664aa7] text-2xl hover:scale-105 transition-transform"
+                data-icon="settings">settings</button>
+        </div>
+    </header>
+    <!-- Side Navigation Anchor (As per Shared Components) -->
+    <nav
+        class="fixed left-0 top-0 h-full flex flex-col items-center py-6 gap-4 z-40 bg-[#eff8ff] dark:bg-slate-900 w-24 rounded-r-3xl border-r-4 border-[#664aa7] shadow-[4px_0px_0px_0px_rgba(102,74,167,1)] pt-20">
+        <div class="flex flex-col items-center mb-4">
+            <div class="w-12 h-12 rounded-full border-4 border-tertiary overflow-hidden mb-1">
+                <img alt="Player Profile"
+                    data-alt="close-up of a vibrant cel-shaded anime character avatar with purple hair and determined eyes"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeWM-sc1L5NdfW9TrNbKpEmVo-NOacqKKpVONqwzvcRzb2gj9D3F3TswYyDjXShd9wHW9yszW6PbtB6CCVwKj0NAfghpoYq3-TSA7p7CkwbO_729qVs9uBBgKl12MUE9qe9oV8PLxbqV4fUmWIVrvfVEEV6DoFzbLgCkwvMFzlZSDuJ7j7AQfd-ghrQ2KgWnufnYQOJb559mmrSHaXkEndt-7DQRxRTy9paudVud4cXUqo0QhBvNCCR0i_t79Zls0yPB4dzQWlHiI" />
+            </div>
+            <span class="text-[10px] font-headline font-bold text-tertiary">RANK SSS</span>
+        </div>
+        <div class="flex flex-col gap-6 items-center">
+            <div class="flex flex-col items-center gap-1 opacity-80 group cursor-pointer">
+                <div
+                    class="w-12 h-12 flex items-center justify-center rounded-full border-4 border-transparent group-hover:border-tertiary group-hover:bg-secondary-container transition-all">
+                    <span class="material-symbols-outlined text-tertiary" data-icon="home">home</span>
+                </div>
+                <span class="text-[10px] font-bold text-tertiary">Home</span>
+            </div>
+            <!-- Active Tab: Social/Result context -->
+            <div class="flex flex-col items-center gap-1 cursor-pointer scale-95 transition-all">
+                <div
+                    class="w-12 h-12 flex items-center justify-center bg-[#fcdc00] text-[#664aa7] rounded-full border-4 border-[#664aa7] shadow-[2px_2px_0px_#664aa7]">
+                    <span class="material-symbols-outlined" data-icon="sports_score">sports_score</span>
+                </div>
+                <span class="text-[10px] font-bold text-tertiary">Match</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 opacity-80 group cursor-pointer">
+                <div
+                    class="w-12 h-12 flex items-center justify-center rounded-full border-4 border-transparent group-hover:border-tertiary group-hover:bg-secondary-container transition-all">
+                    <span class="material-symbols-outlined text-tertiary" data-icon="shopping_cart">shopping_cart</span>
+                </div>
+                <span class="text-[10px] font-bold text-tertiary">Shop</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 opacity-80 group cursor-pointer">
+                <div
+                    class="w-12 h-12 flex items-center justify-center rounded-full border-4 border-transparent group-hover:border-tertiary group-hover:bg-secondary-container transition-all">
+                    <span class="material-symbols-outlined text-tertiary" data-icon="groups">groups</span>
+                </div>
+                <span class="text-[10px] font-bold text-tertiary">Social</span>
+            </div>
+        </div>
+        <button
+            class="mt-auto w-12 h-12 bg-primary-container border-4 border-tertiary rounded-full font-headline font-black text-tertiary shadow-[2px_2px_0px_#664aa7] hover:scale-105 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none">GO!</button>
+    </nav>
+    <!-- Main Canvas: Result Screen Landscape -->
+    <main class="ml-24 pt-16 h-full flex items-center justify-center relative overflow-hidden bg-comic-stars">
+        <!-- Background Effects: Rays & Stars -->
+        <div class="absolute inset-0 z-0 flex items-center justify-center opacity-30">
+            <div class="w-[150%] h-[150%] animate-pulse"
+                style="background: repeating-conic-gradient(from 0deg, transparent 0 15deg, #fcdc00 15deg 30deg);">
+            </div>
+        </div>
+        <div class="relative z-10 w-full max-w-6xl px-12 grid grid-cols-12 gap-8 items-end">
+            <!-- Left Section: Character Portrait -->
+            <div class="col-span-5 relative">
+                <div class="absolute -top-10 -left-10 z-20">
+                    <div
+                        class="bg-secondary-container p-4 rounded-xl border-4 border-tertiary sticker-effect transform -rotate-12">
+                        <span class="text-tertiary font-headline font-black text-xl">NEW HIGH SCORE!</span>
+                    </div>
+                </div>
+                <!-- Character Image Placeholder -->
+                <img alt="Winning Character" class="w-full h-auto drop-shadow-[15px_15px_0px_rgba(102,74,167,0.4)]"
+                    data-alt="Dynamic cel-shaded anime girl with twin tails in a yellow hoodie performing a victory peace sign, high energy sports anime style"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTnMAjpABYjJwySTqG-EqOGnblCqS8_EdDEVsiSxhPE1jk9jLWSx9irResORq1utl18C_3XDKVtIB3WayXWJ5rnh2V7WMkDGEINrjz2D_uwDi22RJ7Y0xxkbPz6aHab5e2rLrMi4A0SAKFLEnSV5w-oPoLN6-jSwo99YOFoAnAEdYgfsAtVSHQm4nOQC3GS3BKAG6zKB-RYirt99WbxkPJJ4WYZuecbes7xmU2Et1QOwvAB7_8HNWFoQAY6g2zJ8YqrF7fgKm2Op0" />
+            </div>
+            <!-- Right Section: Result Details & Stats -->
+            <div class="col-span-7 pb-12 flex flex-col gap-6">
+                <!-- Victory Header -->
+                <div class="relative mb-4">
+                    <h1
+                        class="text-9xl font-headline font-black text-primary-container manga-stroke manga-shadow tracking-widest italic transform -skew-x-6">
+                        你贏了!
+                    </h1>
+                    <div class="absolute -top-6 -right-6 flex gap-2">
+                        <span
+                            class="material-symbols-outlined text-primary-container text-6xl drop-shadow-[4px_4px_0px_#664aa7]"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span
+                            class="material-symbols-outlined text-secondary-fixed text-4xl drop-shadow-[4px_4px_0px_#664aa7]"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                </div>
+                <!-- Stats Bento Grid -->
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Reward Card -->
+                    <div
+                        class="bg-surface-container-lowest border-4 border-tertiary rounded-xl p-4 sticker-effect flex items-center gap-4">
+                        <div
+                            class="bg-primary-container w-16 h-16 rounded-full border-4 border-tertiary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-tertiary text-4xl"
+                                style="font-variation-settings: 'FILL' 1;">monetization_on</span>
+                        </div>
+                        <div>
+                            <p class="text-tertiary font-headline font-bold text-sm uppercase">Star Coins</p>
+                            <p class="text-3xl font-headline font-black text-tertiary">+2,500</p>
+                        </div>
+                    </div>
+                    <!-- EXP Card -->
+                    <div
+                        class="bg-surface-container-lowest border-4 border-tertiary rounded-xl p-4 sticker-effect flex items-center gap-4">
+                        <div
+                            class="bg-secondary-container w-16 h-16 rounded-full border-4 border-tertiary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-tertiary text-4xl">trending_up</span>
+                        </div>
+                        <div>
+                            <p class="text-tertiary font-headline font-bold text-sm uppercase">Experience</p>
+                            <p class="text-3xl font-headline font-black text-tertiary">+850</p>
+                        </div>
+                    </div>
+                    <!-- Rank Progress Bar -->
+                    <div
+                        class="col-span-2 bg-surface-container-lowest border-4 border-tertiary rounded-xl p-6 sticker-effect">
+                        <div class="flex justify-between items-end mb-2">
+                            <span class="font-headline font-black text-tertiary text-xl">RANK PROGRESS</span>
+                            <span class="font-headline font-black text-secondary-fixed text-2xl">LV. 42 → 43</span>
+                        </div>
+                        <div
+                            class="w-full h-8 bg-surface-container-high rounded-full border-4 border-tertiary overflow-hidden">
+                            <div class="h-full bg-secondary-fixed w-[75%] border-r-4 border-tertiary"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Action Buttons -->
+                <div class="flex gap-6 mt-4">
+                    <button
+                        class="flex-1 bg-primary-container py-5 rounded-xl border-4 border-tertiary sticker-effect hover:scale-105 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-3">
+                        <span class="material-symbols-outlined font-black text-tertiary text-3xl">refresh</span>
+                        <span class="text-tertiary font-headline font-black text-3xl">重新開始</span>
+                    </button>
+                    <button
+                        class="flex-1 bg-secondary-container py-5 rounded-xl border-4 border-tertiary sticker-effect hover:scale-105 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-3">
+                        <span class="material-symbols-outlined font-black text-tertiary text-3xl">home</span>
+                        <span class="text-tertiary font-headline font-black text-3xl">回主首頁</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Decorative Elements -->
+        <div class="absolute bottom-8 right-8 flex gap-4 pointer-events-none">
+            <div class="w-16 h-16 rounded-full bg-primary-container border-4 border-tertiary opacity-40"></div>
+            <div class="w-8 h-8 rounded-full bg-secondary-fixed border-4 border-tertiary opacity-40 mt-8"></div>
+        </div>
+    </main>
+</body>
+
+</html>

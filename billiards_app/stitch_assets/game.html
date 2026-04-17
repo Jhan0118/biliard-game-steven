@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BILLIARD BATTLE - HOME LOBBY</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#570008",
+                        "on-tertiary-fixed-variant": "#432582",
+                        "error-container": "#fb5151",
+                        "outline": "#6a7982",
+                        "tertiary-fixed-dim": "#b093f6",
+                        "error-dim": "#9f0519",
+                        "on-background": "#233039",
+                        "on-surface": "#233039",
+                        "background": "#eff8ff",
+                        "primary-dim": "#5c4f00",
+                        "primary-container": "#fcdc00",
+                        "primary-fixed": "#fcdc00",
+                        "secondary-dim": "#005863",
+                        "primary": "#695b00",
+                        "surface-container-highest": "#cae0ef",
+                        "tertiary-container": "#bda1ff",
+                        "on-secondary-container": "#004f59",
+                        "tertiary-dim": "#5a3e9a",
+                        "surface-container": "#d8ebf8",
+                        "secondary-fixed-dim": "#00d7f0",
+                        "surface-container-high": "#d1e5f3",
+                        "on-primary": "#fff3c3",
+                        "on-primary-container": "#5a4e00",
+                        "surface-tint": "#695b00",
+                        "on-primary-fixed": "#453c00",
+                        "surface-variant": "#cae0ef",
+                        "surface": "#eff8ff",
+                        "secondary": "#006571",
+                        "on-tertiary-container": "#3a1a79",
+                        "on-tertiary-fixed": "#1f0052",
+                        "on-surface-variant": "#4f5d67",
+                        "inverse-primary": "#fcdc00",
+                        "inverse-surface": "#031017",
+                        "on-secondary-fixed": "#003a42",
+                        "error": "#b31b25",
+                        "secondary-container": "#26e6ff",
+                        "surface-container-low": "#e3f3ff",
+                        "on-secondary": "#d8f8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#909fa9",
+                        "on-tertiary": "#f8f0ff",
+                        "tertiary": "#664aa7",
+                        "on-error": "#ffefee",
+                        "on-primary-fixed-variant": "#655800",
+                        "surface-bright": "#eff8ff",
+                        "outline-variant": "#a0afb9",
+                        "surface-dim": "#c1d8e7",
+                        "primary-fixed-dim": "#ecce00",
+                        "on-secondary-fixed-variant": "#005964",
+                        "secondary-fixed": "#26e6ff",
+                        "tertiary-fixed": "#bda1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .ink-stroke-heavy {
+            -webkit-text-stroke: 2px #664aa7;
+        }
+
+        .manga-shadow {
+            text-shadow: 4px 4px 0px #664aa7;
+        }
+    </style>
+</head>
+
+<body class="bg-background font-body overflow-hidden h-screen w-screen selection:bg-primary-container">
+    <header
+        class="fixed top-0 left-0 w-full h-16 flex justify-between items-center px-8 z-50 bg-[#eff8ff] dark:bg-slate-900 border-b-4 border-[#664aa7] shadow-[4px_4px_0px_0px_rgba(102,74,167,1)]">
+        <div class="flex items-center gap-4">
+            <h1
+                class="font-headline font-black uppercase tracking-tighter text-2xl text-[#664aa7] drop-shadow-[2px_2px_0px_#fcdc00]">
+                BILLIARD BATTLE</h1>
+            <div class="flex gap-2 ml-8">
+                <div
+                    class="bg-surface-container-lowest border-4 border-tertiary px-3 py-1 rounded-full flex items-center gap-2 shadow-[2px_2px_0px_#664aa7]">
+                    <span class="material-symbols-outlined text-red-500"
+                        style="font-variation-settings: 'FILL' 1;">favorite</span>
+                    <span class="font-headline font-black text-tertiary">10/10</span>
+                </div>
+                <div
+                    class="bg-surface-container-lowest border-4 border-tertiary px-3 py-1 rounded-full flex items-center gap-2 shadow-[2px_2px_0px_#664aa7]">
+                    <span class="material-symbols-outlined text-primary-container"
+                        style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="font-headline font-black text-tertiary">9,999</span>
+                </div>
+            </div>
+        </div>
+        <div class="flex gap-3">
+            <button
+                class="w-10 h-10 rounded-full border-4 border-tertiary bg-surface-container-lowest flex items-center justify-center hover:scale-105 transition-transform active:translate-y-0.5">
+                <span class="material-symbols-outlined text-tertiary">settings</span>
+            </button>
+            <button
+                class="w-10 h-10 rounded-full border-4 border-tertiary bg-surface-container-lowest flex items-center justify-center hover:scale-105 transition-transform active:translate-y-0.5">
+                <span class="material-symbols-outlined text-tertiary">mail</span>
+            </button>
+        </div>
+    </header>
+    <nav
+        class="fixed left-0 top-0 h-full w-24 bg-[#eff8ff] dark:bg-slate-900 border-r-4 border-[#664aa7] shadow-[4px_0px_0px_0px_rgba(102,74,167,1)] flex flex-col items-center py-20 gap-6 z-40">
+        <div class="flex flex-col items-center gap-1 mb-4">
+            <div class="w-14 h-14 rounded-full border-4 border-tertiary overflow-hidden shadow-[2px_2px_0px_#664aa7]">
+                <img alt="Player Profile" class="w-full h-full object-cover"
+                    data-alt="cel-shaded 3D anime girl avatar with pink hair and a determined athletic expression on a light blue background"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM6Bnppc65IgejZXeTVAvo0pQObWwU5y_JTUMc3aHJkllGTaljpj3yFrdNS3SEKi6V7hcSUXXnjZiZoQWGd-Bq7SsCjolCBa-jzTT1TnGrlut2jpEeAJ8FqLeif6EIB4MJaBflNlmnZUHyBpaQjIQxSuitU6Bh4AQJLJ21IEahn2a03BdZUnaFcAk3BO43NHNtSeqO-8mUFxSu2aWm5atOw6QjVayNUVLAsXIMb0EikMncRzQANMND8SlT0c_JorkcWwjqozvPdFA" />
+            </div>
+            <span class="font-headline font-bold text-[10px] text-tertiary">PRO PLAYER</span>
+            <span
+                class="font-headline font-black text-[10px] bg-primary-container px-2 rounded-full border-2 border-tertiary">SSS</span>
+        </div>
+        <button
+            class="flex flex-col items-center p-2 bg-[#fcdc00] text-[#664aa7] rounded-full border-4 border-[#664aa7] shadow-[2px_2px_0px_#664aa7] scale-95 transition-all duration-150">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+            <span class="font-headline font-bold text-[10px] uppercase">Home</span>
+        </button>
+        <button
+            class="flex flex-col items-center p-2 text-[#664aa7] opacity-80 hover:bg-[#26e6ff] hover:text-white rounded-full transition-all">
+            <span class="material-symbols-outlined">sports_score</span>
+            <span class="font-headline font-bold text-[10px] uppercase">Cues</span>
+        </button>
+        <button
+            class="flex flex-col items-center p-2 text-[#664aa7] opacity-80 hover:bg-[#26e6ff] hover:text-white rounded-full transition-all">
+            <span class="material-symbols-outlined">shopping_cart</span>
+            <span class="font-headline font-bold text-[10px] uppercase">Shop</span>
+        </button>
+        <button
+            class="flex flex-col items-center p-2 text-[#664aa7] opacity-80 hover:bg-[#26e6ff] hover:text-white rounded-full transition-all">
+            <span class="material-symbols-outlined">groups</span>
+            <span class="font-headline font-bold text-[10px] uppercase">Social</span>
+        </button>
+        <div class="mt-auto">
+            <button
+                class="w-14 h-14 rounded-full bg-primary-container border-4 border-tertiary flex items-center justify-center font-black text-tertiary shadow-[4px_4px_0px_#664aa7] hover:scale-110 active:shadow-none active:translate-x-1 active:translate-y-1 transition-all">
+                GO!
+            </button>
+        </div>
+    </nav>
+    <main class="ml-24 pt-16 h-full relative overflow-hidden flex flex-row">
+        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none"
+            style="background-image: radial-gradient(#664aa7 2px, transparent 2px); background-size: 32px 32px;"></div>
+        <div class="w-1/2 h-full relative flex items-end justify-center pb-12">
+            <div
+                class="absolute -bottom-20 -left-20 w-[600px] h-[600px] bg-secondary-container rounded-full opacity-30 blur-3xl">
+            </div>
+            <div class="relative z-10 w-full h-full flex flex-col justify-end items-center">
+                <img alt="Athletic Anime Girl"
+                    class="h-[120%] w-auto object-contain drop-shadow-[10px_20px_0px_rgba(102,74,167,0.3)] filter contrast-125 select-none"
+                    data-alt="A 12-year-old Q-style athletic anime girl with twin tails, yellow hoodie, mischievous expression, heavy cel-shading outlines, vibrant manga style."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwtaSs7WoO8lCZPVGpUVEAvbms_vY0SRI75unwhrcMvh4EwUtGTrEOuH9BbkPcw3qxIr564YezXnKoVNr_Beo3qRGLYiA4bSNA8U85gswvjqX94B_oZj2-b2NU1IThVMbQb5XO479WAZXmzPfFjoa4es7VO9F0Z8lAXTTYlui5v2gpy43mVBB2mUo2_HQkUqakYyoKkUVeFnTtu2zdWAw1uh4_Sk56y43kyD4fYrm4QLbyT6Gc-d_4RFV8jRyAtFC4kx1dGaThcS8" />
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 bottom-12 bg-white/80 backdrop-blur-md border-4 border-tertiary p-4 rounded-xl shadow-[6px_6px_0px_#664aa7] w-64">
+                    <p class="font-headline font-black text-tertiary text-center leading-tight">「準備好大顯身手了嗎？」</p>
+                </div>
+            </div>
+        </div>
+        <div class="w-1/2 h-full flex flex-col justify-center items-center gap-8 pr-12">
+            <div class="space-y-6 w-full max-w-md">
+                <button
+                    class="group w-full h-24 bg-primary-container border-[6px] border-tertiary rounded-xl shadow-[8px_8px_0px_#664aa7] flex items-center justify-between px-8 transition-all hover:-translate-y-1 active:translate-y-1 active:shadow-none">
+                    <div class="flex items-center gap-6">
+                        <div
+                            class="w-14 h-14 bg-white rounded-full border-4 border-tertiary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-4xl text-tertiary"
+                                style="font-variation-settings: 'FILL' 1;">sports_kabaddi</span>
+                        </div>
+                        <span class="text-4xl font-headline font-black text-tertiary tracking-widest manga-shadow">1對1
+                            對戰</span>
+                    </div>
+                    <span
+                        class="material-symbols-outlined text-4xl text-tertiary group-hover:translate-x-2 transition-transform">chevron_right</span>
+                </button>
+                <button
+                    class="group w-full h-24 bg-primary-container border-[6px] border-tertiary rounded-xl shadow-[8px_8px_0px_#664aa7] flex items-center justify-between px-8 transition-all hover:-translate-y-1 active:translate-y-1 active:shadow-none">
+                    <div class="flex items-center gap-6">
+                        <div
+                            class="w-14 h-14 bg-white rounded-full border-4 border-tertiary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-4xl text-tertiary"
+                                style="font-variation-settings: 'FILL' 1;">flag</span>
+                        </div>
+                        <span
+                            class="text-4xl font-headline font-black text-tertiary tracking-widest manga-shadow">闖關模式</span>
+                    </div>
+                    <span
+                        class="material-symbols-outlined text-4xl text-tertiary group-hover:translate-x-2 transition-transform">chevron_right</span>
+                </button>
+                <button
+                    class="group w-full h-24 bg-primary-container border-[6px] border-tertiary rounded-xl shadow-[8px_8px_0px_#664aa7] flex items-center justify-between px-8 transition-all hover:-translate-y-1 active:translate-y-1 active:shadow-none">
+                    <div class="flex items-center gap-6">
+                        <div
+                            class="w-14 h-14 bg-white rounded-full border-4 border-tertiary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-4xl text-tertiary"
+                                style="font-variation-settings: 'FILL' 1;">storefront</span>
+                        </div>
+                        <span
+                            class="text-4xl font-headline font-black text-tertiary tracking-widest manga-shadow">球桿商店</span>
+                    </div>
+                    <span
+                        class="material-symbols-outlined text-4xl text-tertiary group-hover:translate-x-2 transition-transform">chevron_right</span>
+                </button>
+            </div>
+            <div class="flex gap-4 w-full max-w-md">
+                <div
+                    class="flex-1 bg-surface-container border-4 border-tertiary p-4 rounded-xl shadow-[4px_4px_0px_#664aa7] flex items-center gap-3">
+                    <div
+                        class="bg-secondary-container w-10 h-10 rounded-full border-2 border-tertiary flex items-center justify-center">
+                        <span class="material-symbols-outlined text-tertiary">military_tech</span>
+                    </div>
+                    <div>
+                        <div class="text-[10px] font-bold text-tertiary/60">目前段位</div>
+                        <div class="font-headline font-black text-tertiary">黃金級 III</div>
+                    </div>
+                </div>
+                <div
+                    class="flex-1 bg-surface-container border-4 border-tertiary p-4 rounded-xl shadow-[4px_4px_0px_#664aa7] flex items-center gap-3">
+                    <div
+                        class="bg-secondary-container w-10 h-10 rounded-full border-2 border-tertiary flex items-center justify-center">
+                        <span class="material-symbols-outlined text-tertiary">emoji_events</span>
+                    </div>
+                    <div>
+                        <div class="text-[10px] font-bold text-tertiary/60">勝率</div>
+                        <div class="font-headline font-black text-tertiary">68.5%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-6 right-8 flex gap-3 z-30">
+            <div
+                class="bg-white/80 backdrop-blur border-4 border-tertiary px-6 py-2 rounded-full font-headline font-black text-tertiary flex items-center gap-2">
+                <span class="material-symbols-outlined">trending_up</span>
+                今日任務：贏得 3 場 1對1 對戰 (1/3)
+            </div>
+        </div>
+    </main>
+    <div class="fixed top-0 left-0 w-full h-full pointer-events-none z-50 border-[12px] border-tertiary opacity-10">
+    </div>
+</body>
+
+</html>
